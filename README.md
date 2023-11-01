@@ -1,4 +1,5 @@
 dibaca ya jangan di skip"
+update akan mendatang
 
 # Nuxt 3 Minimal Starter
 
