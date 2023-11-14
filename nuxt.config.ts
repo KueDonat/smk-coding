@@ -2,14 +2,16 @@
 export default defineNuxtConfig({
   app: {
     head: {
-    link: [
-      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" }
-    ],
-    }
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css",
+        },
+      ],
+    },
   },
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt"],
-
+  modules: ["@nuxtjs/tailwindcss", "@vite-pwa/nuxt", "@pinia/nuxt"],
   pwa: {
     manifest: {
       name: "smkcoding",
@@ -24,24 +26,29 @@ export default defineNuxtConfig({
         {
           src: "images/icons/logo1.jpg",
           sizes: "96x96",
-          type: "image/png"
+          type: "image/png",
         },
         {
-          
           src: "images/icons/logo2.jpg",
           sizes: "128x128",
-          type: "image/png"
+          type: "image/png",
         },
         {
-          
           src: "images/icons/pinguin.jpg",
           sizes: "144x144",
-          type: "image/png"
+          type: "image/png",
         },
-      ]
+      ],
     },
     devOptions: {
       enabled: true,
-    }
-  }
-})
+    },
+  },
+  appConfig: {
+    apikey: process.env.SUPABASE_API_KEYS,
+    baseUrl: process.env.SUPABASE_URL,
+    secretKey: process.env.SUPABASE_SECRETS_KEY,
+    storageUrl: process.env.SUPABASE_STORAGE_URL,
+    baseStorageUrl: process.env.SUPABASE_GET_STORAGE_URL,
+  },
+});

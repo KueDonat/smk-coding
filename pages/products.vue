@@ -18,6 +18,8 @@ const allProducts = computed(() => {
             class="bg-orange-500 text-white flex justifycenter items-center px-3 rounded-lg"
             >Create Category</NuxtLink
           >
+          <NuxtLink to="/product/create" class="bg-green-500 text-white flex justify-center
+items-center px-3 rounded-lg">Create Products</NuxtLink>
           <Dropdown @selected-category="selectedCategory = $event" />
         </div>
         <div class="flex gap-10 flex-wrap ml-28">
